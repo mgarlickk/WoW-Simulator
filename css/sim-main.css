@@ -1,0 +1,48 @@
+
+html {font-family: 'Baloo 2', arial, sans-serif;}
+
+.gear {text-align: center;}
+
+.gear-spacing {padding-bottom: 20px;}
+
+.header {text-align: center;}
+
+.left-gear {
+    margin: 0;
+    left: 50%;
+}
+
+/* Gear dropdowns */
+.site-dropbtn {
+    border: none;
+    display: block;
+    margin: 0px;
+}
+
+.site-dropbtn:hover {
+    background-color: #7ED6DF;
+    cursor: pointer;
+}
+
+.site-dropdown {
+}
+
+.site-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    color: black;
+    opacity: .9;
+    min-width: 260px;
+    margin-top: -3px;
+}
+
+.site-dropdown:hover .site-dropdown-content {
+    display: block;
+}
+
+.gear-selects {
+    display: block;
+    margin-left: 200px;
+    margin-bottom: 50px;
+}
