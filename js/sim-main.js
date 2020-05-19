@@ -1,4 +1,3 @@
-//var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/1qqMY9Mm0tEY-kmq2E9EfwS6-Z1ZoRk9pF7zK78SdzTQ/edit?usp=sharing';
 var publicWoWSpreadsheet = 'https://docs.google.com/spreadsheets/d/1MBf8yFVXd6jt9378Sp9ILK10yJ7TaaGahJKyR6UgVPw/edit?usp=sharing';
 
     function init() {
@@ -10,6 +9,7 @@ var publicWoWSpreadsheet = 'https://docs.google.com/spreadsheets/d/1MBf8yFVXd6jt
     }
 
     function showInfo(data, tabletop){
+        /* Pull in DPS and create elements to display it */
         data.forEach(function (data){
             var header = document.querySelector('.header');
             var newDamageDiv = document.createElement('h2');
@@ -19,27 +19,20 @@ var publicWoWSpreadsheet = 'https://docs.google.com/spreadsheets/d/1MBf8yFVXd6jt
             }
         });
         
-        data.forEach(function(data){
+        /* Pull in the left side gear and create dropdown for each */
+        data.forEach(function LeftGear(data){
             var leftGear = document.querySelector('.left-gear');
             var newSelect = document.createElement('select');
             var defaultOption = document.createElement('option');
-            var newOptions = document.createElement('option');
-            var gearList = [data.GearList];
             newSelect.classList.add('gear-selects');
             defaultOption.text = data.GearLeft;
             if(data.GearLeft != ''){
                 leftGear.appendChild(newSelect);
                 newSelect.appendChild(defaultOption);
-
-            }
-            gearList.forEach(function(gear){
-                console.log(gear);
-                newOptions.text = gear;
-                newSelect.appendChild(newOptions); 
-             });
-            
+            };
         });
         
+        /* Pull in middle gear */
         data.forEach(function(data){
             var rightGear = document.querySelector('.right-gear');
             var newDiv = document.createElement('div');
@@ -48,6 +41,7 @@ var publicWoWSpreadsheet = 'https://docs.google.com/spreadsheets/d/1MBf8yFVXd6jt
             newDiv.innerHTML = data.GearRight;
         });
         
+        /* Pull in the right side gear */
         data.forEach(function(data){
             var middleGear = document.querySelector('.middle-gear');
             var newDiv = document.createElement('div');
